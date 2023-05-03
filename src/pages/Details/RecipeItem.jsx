@@ -3,11 +3,10 @@
 import { Button, Card } from "react-bootstrap";
 
 import {
-    FaBookmark,
-    FaShareAltSquare,
+
     FaStarHalfAlt,
     FaStar,
-    FaEye
+
 } from 'react-icons/fa';
 
 
@@ -39,7 +38,7 @@ const RecipeItem = ({ pd }) => {
                     <FaStar></FaStar>
                     <FaStarHalfAlt></FaStarHalfAlt>
                     {
-                        rating
+                        rating && rating
                     }
                 </div>
             </Card.Footer>
