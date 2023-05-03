@@ -9,6 +9,10 @@ import {
     FaInstagramSquare
 } from 'react-icons/fa';
 
+import pic1 from "../../assets/6-ingredient.jpg"
+import pic2 from '../../assets/b-inteligent.jpg'
+import pic3 from '../../assets/default.jpg'
+
 // import Qzone from "../Qzone/Qzone";
 // import bg from "../../../assets/bg.png"
 const RightSide = () => {
@@ -28,16 +32,17 @@ const RightSide = () => {
 
                 </ListGroup>
             </div>
-            <div>
-                {/* <Qzone></Qzone> */}
+            <div className="mt-3 card text-danger fw-bold  w-full">
+                <img className="w-full " src={pic1} alt="" />
+
             </div>
-            <div className="mt-3 card text-white w-full">
-                {/* <img className="w-full" src={bg} alt="" /> */}
-                <div className="card-img-overlay ">
-                    <h5 className="card-title text-center fw-bold my-5">Create An Amazing Newspaper</h5>
-                    <p className="card-text text-center my-5">Discover thousands of options, easy to customize layouts, one-click to import demo and much more.</p>
-                    <Button className="btn btn-danger my-4 mx-auto ms-5 px-4">Learn More</Button>
-                </div>
+            <div className="mt-3 card text-danger fw-bold  w-full">
+                <img className="w-full " src={pic2} alt="" />
+
+            </div>
+            <div className="mt-3 card text-danger fw-bold  w-full">
+                <img className="w-full " src={pic3} alt="" />
+
             </div>
         </div>
     );

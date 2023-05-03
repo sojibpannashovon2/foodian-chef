@@ -3,6 +3,7 @@
 import { Col, Container, Row } from "react-bootstrap";
 import { Outlet } from "react-router-dom";
 import Header from "../pages/shared/Header";
+import RightSide from "../pages/shared/RightSide";
 
 const MainLayOut = () => {
     return (
@@ -19,7 +20,7 @@ const MainLayOut = () => {
                         <Outlet></Outlet>
                     </Col>
                     <Col lg={3} >
-                        <h1>right side</h1>
+                        <RightSide></RightSide>
                     </Col>
                 </Row>
             </Container>

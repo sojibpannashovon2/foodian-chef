@@ -9,10 +9,14 @@ import {
 
 } from 'react-icons/fa';
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 
 const RecipeItem = ({ pd }) => {
     console.log(pd);
+    const notify = () => toast("The Recipe Is Favaourtie For Me !!!");
     const { recipe_name, ingredients, cooking_method, rating } = pd
     return (
         <Card className=" mt-4">
@@ -31,7 +35,7 @@ const RecipeItem = ({ pd }) => {
 
             </Card.Body>
             <Card.Footer className="d-flex justify-content-between">
-                <Button className="ms-4" variant="primary">Go somewhere</Button>
+                <Button onClick={notify} className="ms-4" variant="primary">Favorite Item</Button>
                 <div className="me-4 d-flex gap-3 justify-content-center align-items-center">
                     <FaStar></FaStar>
                     <FaStar></FaStar>
@@ -42,6 +46,7 @@ const RecipeItem = ({ pd }) => {
                     }
                 </div>
             </Card.Footer>
+            <ToastContainer></ToastContainer>
         </Card>
     );
 };
