@@ -28,8 +28,10 @@ const RecipeDetails = () => {
                     </Card.Text>
                 </Card.Body>
             </Card>
-            <div>
-
+            <div className="mt-4">
+                {
+                    recipesItem.map(pd => <RecipeItem pd={pd} ></RecipeItem>)
+                }
             </div>
 
         </div>
