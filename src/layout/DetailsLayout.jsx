@@ -1,21 +1,19 @@
 // import React from 'react';
+// import Header from '../pages/shared/Header';
+import { Col, Container, Row } from 'react-bootstrap';
+import { Outlet } from 'react-router-dom';
+import NavberPd from '../pages/shared/NavberPd';
 
-import { Col, Container, Row } from "react-bootstrap";
-import { Outlet } from "react-router-dom";
-import Header from "../pages/shared/Header";
-
-const MainLayOut = () => {
+const DetailsLayout = () => {
     return (
         <div>
-            <Header></Header>
+            <NavberPd></NavberPd>
 
             <Container className='my-5'>
 
                 <Row>
-                    <Col lg={3} >
-                        <h1>left side</h1>
-                    </Col>
-                    <Col lg={6} >
+
+                    <Col lg={9} >
                         <Outlet></Outlet>
                     </Col>
                     <Col lg={3} >
@@ -27,4 +25,4 @@ const MainLayOut = () => {
     );
 };
 
-export default MainLayOut;
+export default DetailsLayout;

@@ -3,7 +3,7 @@
 const RecipeDetails = () => {
     return (
         <div>
-            <h1>This Recipe Details Layout</h1>
+            <h1>Details</h1>
         </div>
     );
 };

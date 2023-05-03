@@ -1,9 +1,19 @@
 // import React from 'react';
 
+import { useLoaderData } from "react-router-dom";
+import CardDetails from "./CardDetails";
+
+
 const Home = () => {
+    const recipes = useLoaderData();
+    // console.log(recipes);
     return (
         <div>
-            <h1>Home is comming</h1>
+            {
+                recipes.map(recipe => <CardDetails key={recipe.id}
+                    recipe={recipe}
+                ></CardDetails>)
+            }
         </div>
     );
 };

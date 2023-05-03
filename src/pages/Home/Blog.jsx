@@ -1,11 +1,11 @@
 // import React from 'react';
 
-const PrivateRoutes = () => {
+const Blog = () => {
     return (
         <div>
-
+            <h1>This is blog</h1>
         </div>
     );
 };
 
-export default PrivateRoutes;
+export default Blog;
