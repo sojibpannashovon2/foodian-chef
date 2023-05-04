@@ -7,12 +7,15 @@ import Home from "../pages/Home/Home";
 import Blog from "../pages/Home/Blog";
 import RecipeDetails from "../pages/Details/RecipeDetails";
 import DetailsLayout from "../layout/DetailsLayout";
+import ErrorPage from "../pages/shared/ErrorPage";
+
 
 
 const router = createBrowserRouter([
     {
         path: '/',
         element: <LogInLayOut></LogInLayOut>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: '/',
