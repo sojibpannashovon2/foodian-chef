@@ -19,10 +19,20 @@ import { authContext } from "../../provider/AuthProvider";
 // import bg from "../../../assets/bg.png"
 
 const RightSide = () => {
-    const { googleSignIn } = useContext(authContext);
+    const { googleSignIn, githubSignIn } = useContext(authContext);
 
     const handleGoogleLog = () => {
         googleSignIn()
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
+    const handleGitHubLog = () => {
+        githubSignIn()
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
@@ -36,7 +46,7 @@ const RightSide = () => {
             <div>
                 <h4>Login With</h4>
                 <Button onClick={handleGoogleLog} className="mb-3 px-5" variant="outline-primary"> <FaGoogle></FaGoogle> Log In With Google</Button>
-                <Button className="px-5" variant="outline-secondary"><FaGithub></FaGithub> Log In With Github</Button>
+                <Button onClick={handleGitHubLog} className="px-5" variant="outline-secondary"><FaGithub></FaGithub> Log In With Github</Button>
             </div>
             <div className="my-3">
                 <h4>Find Us On</h4>

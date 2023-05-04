@@ -45,7 +45,7 @@ const router = createBrowserRouter([
             {
                 path: '/recipes',
                 element: <Home></Home>,
-                loader: () => fetch(`http://localhost:5000/recipes`)
+                loader: () => fetch(`https://foodian-chef-and-food-server-sojibpannashovon2.vercel.app/recipes`)
             },
 
 
@@ -59,7 +59,7 @@ const router = createBrowserRouter([
             {
                 path: ':id',
                 element: <PrivateRoutes><RecipeDetails></RecipeDetails></PrivateRoutes>,
-                loader: ({ params }) => fetch(`http://localhost:5000/recipes/${params.id}`)
+                loader: ({ params }) => fetch(`https://foodian-chef-and-food-server-sojibpannashovon2.vercel.app/recipes/${params.id}`)
             }
         ]
     }

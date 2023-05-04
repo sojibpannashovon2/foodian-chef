@@ -5,9 +5,10 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { authContext } from '../../provider/AuthProvider';
+import { FaGoogle, FaGithub } from 'react-icons/fa';
 
 const LogIn = () => {
-    const { signIn } = useContext(authContext);
+    const { signIn, googleSignIn, githubSignIn } = useContext(authContext);
 
     const [success, setSuccess] = useState(null);
     const [error, setError] = useState(null)
@@ -39,6 +40,29 @@ const LogIn = () => {
 
     }
 
+    // Google and GitHub auth
+
+    const handleGoogleLog = () => {
+        googleSignIn()
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
+    const handleGitHubLog = () => {
+        githubSignIn()
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
+
     return (
         <Container style={{ width: "25rem" }} className=' mx-auto my-5 card p-5 shadow-lg border border-info'>
             <h2 className="mb-3 text-center fw-bold">PLEASE LOG-IN</h2>
@@ -53,16 +77,25 @@ const LogIn = () => {
                     <Form.Label>Password</Form.Label>
                     <Form.Control type="password" placeholder="Password" name='password' required />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                {/* <Form.Group className="mb-3" controlId="formBasicCheckbox">
                     <Form.Check type="checkbox" label="Check me out" />
-                </Form.Group>
+                </Form.Group> */}
                 <div className='my-4'>
                     <small>Are you new to the Website?      <Link to="/register">  Registration</Link></small>
                 </div>
 
-                <Button variant="primary" type="submit">
+                <Button className='mb-3' variant="primary" type="submit">
                     Submit
                 </Button>
+                <br />
+                <small>Are you want to Log In with  Authorized App ??</small>
+
+                <div className='d-flex d-flex justify-content-center align-items-center fw-bold gap-5 mt-3'>
+                    <Button onClick={handleGoogleLog} variant="outline-success"> <span> <FaGoogle></FaGoogle></span> Google</Button>
+                    <Button onClick={handleGitHubLog} variant="outline-success"> <span><FaGithub></FaGithub></span> GitHub</Button>
+                </div>
+
+
 
             </Form>
             <div className='text-center'>
