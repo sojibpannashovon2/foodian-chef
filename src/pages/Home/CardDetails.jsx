@@ -2,6 +2,7 @@
 
 import { Button, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import LazyLoad from 'react-lazy-load';
 
 const CardDetails = ({ recipe }) => {
     const { id, name, photo, years_of_experience, likes, recipes_number, description } = recipe
@@ -12,7 +13,10 @@ const CardDetails = ({ recipe }) => {
         <Card border="success" className="mb-3 shadow-lg">
             {/* 
             <Card.Header>Header</Card.Header> */}
-            <Card.Img className="img-fluid  p-4 " style={{ height: "400px", padding: "10px", borderRadius: "50px" }} variant="top" src={photo} />
+            <LazyLoad offset={400} onContentVisible={() => { console.log('loaded!') }} threshold={0.95}>
+                <Card.Img className="img-fluid  p-4 " style={{ height: "400px", padding: "10px", borderRadius: "50px" }} variant="top" src={photo} />
+            </LazyLoad>
+
             <Card.Body>
                 <Card.Title className="fw-bold">{name}</Card.Title>
                 <Card.Text>

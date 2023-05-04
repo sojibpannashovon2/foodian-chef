@@ -1,7 +1,7 @@
 // import React from 'react';
 
 import { Button, Container, Nav, Navbar } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 // import { FaPersonBooth } from "react-icons/fa";
 import { useContext } from "react";
 import { authContext } from "../../provider/AuthProvider";
@@ -30,10 +30,13 @@ const NavberPd = () => {
                         <Nav.Link href="#features">
                             <Link to="/">Home</Link>
                         </Nav.Link>
-                        <Nav.Link href="#pricing">
+                        {/* <Nav.Link href="#pricing">
                             <Link to="/blog">Blog</Link>
-                        </Nav.Link>
-                        <Nav.Link href="#pricin2">About</Nav.Link>
+                        </Nav.Link> */}
+                        <NavLink to="/blog" style={isActive => ({
+                            color: isActive ? "green" : "blue"
+                        })}> Blog</NavLink>
+
 
                     </Nav>
                     <Nav className='d-flex justify-content-center align-items-center fw-bold gap-2'>

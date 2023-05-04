@@ -1,7 +1,7 @@
 // import React from 'react';
 
 import { Button, Card, Container, Nav, Navbar } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 
 import banner from '../../assets/banner.jpg'
@@ -13,6 +13,7 @@ const Header = () => {
     const { user, logOut } = useContext(authContext)
     // console.log(name);
 
+
     const handleLogoutButton = () => {
         logOut()
             .then(() => {
@@ -23,6 +24,8 @@ const Header = () => {
             })
     }
 
+
+
     return (
         <>
             <Navbar className="container bg-secondary p-2 border border-success shadow-lg fw-bold " collapseOnSelect expand="lg" bg="light" variant="light">
@@ -31,14 +34,17 @@ const Header = () => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="mx-auto ">
-                            <Nav.Link href="#features" >
+                            {/* <Nav.Link href="#features" >
                                 <Link to="/recipes">Home</Link>
 
-                            </Nav.Link>
+                            </Nav.Link> */}
+                            <NavLink to='/recipe' style={isActive => ({
+                                color: isActive ? "green" : "blue"
+                            })}> Home</NavLink>
                             <Nav.Link href="#pricing">
                                 <Link to="/blog">Blog</Link>
                             </Nav.Link>
-                            <Nav.Link href="#pricin2">About</Nav.Link>
+
 
                         </Nav>
                         <Nav className='d-flex justify-content-center align-items-center fw-bold'>

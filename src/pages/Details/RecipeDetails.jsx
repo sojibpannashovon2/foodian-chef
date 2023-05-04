@@ -3,6 +3,7 @@
 import { Card } from "react-bootstrap";
 import { useLoaderData } from "react-router-dom";
 import RecipeItem from "./RecipeItem";
+import LazyLoad from "react-lazy-load";
 
 const RecipeDetails = () => {
     const recipe = useLoaderData();
@@ -14,7 +15,12 @@ const RecipeDetails = () => {
 
             <Card border="danger shadow-lg bg-light">
                 <Card.Header className="d-flex justify-content-center align-items-center gap-5">
-                    <div className="">  <Card.Img className="img-fluid  p-4 " style={{ height: "300px", padding: "10px", borderRadius: "50px", width: "300px" }} variant="top" src={photo} /></div>
+                    <div className="">
+                        <LazyLoad offset={500} once>
+                            <Card.Img className="img-fluid  p-4 " style={{ height: "300px", padding: "10px", borderRadius: "50px", width: "300px" }} variant="top" src={photo} />
+
+                        </LazyLoad>
+                    </div>
 
                     <div><div className="fw-semibold d-flex flex-column gap-3 ">
 

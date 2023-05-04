@@ -5,6 +5,7 @@ import { Outlet } from "react-router-dom";
 import Header from "../pages/shared/Header";
 import RightSide from "../pages/shared/RightSide";
 import Footer from "../pages/shared/Footer";
+import LeftSide from "../pages/shared/styles/LeftSide";
 
 const MainLayOut = () => {
     return (
@@ -15,7 +16,7 @@ const MainLayOut = () => {
 
                 <Row>
                     <Col lg={3} >
-                        <h1>left side</h1>
+                        <LeftSide></LeftSide>
                     </Col>
                     <Col lg={6} >
                         <Outlet></Outlet>
