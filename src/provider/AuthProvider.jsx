@@ -5,7 +5,7 @@ import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWith
 import app from "../firebase/firebase.config";
 
 
-export const authProvider = createContext(null);
+export const authContext = createContext(null);
 const auth = getAuth(app);
 
 const AuthProvider = ({ children }) => {
@@ -59,9 +59,9 @@ const AuthProvider = ({ children }) => {
         updateUserProfile
     }
     return (
-        <authProvider.Provider value={authInfo}>
+        <authContext.Provider value={authInfo}>
             {children}
-        </authProvider.Provider>
+        </authContext.Provider>
     );
 };
 

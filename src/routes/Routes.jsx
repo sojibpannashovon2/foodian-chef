@@ -8,6 +8,7 @@ import Blog from "../pages/Home/Blog";
 import RecipeDetails from "../pages/Details/RecipeDetails";
 import DetailsLayout from "../layout/DetailsLayout";
 import ErrorPage from "../pages/shared/ErrorPage";
+import PrivateRoutes from "./PrivateRoutes";
 
 
 
@@ -57,7 +58,7 @@ const router = createBrowserRouter([
         children: [
             {
                 path: ':id',
-                element: <RecipeDetails></RecipeDetails>,
+                element: <PrivateRoutes><RecipeDetails></RecipeDetails></PrivateRoutes>,
                 loader: ({ params }) => fetch(`http://localhost:5000/recipes/${params.id}`)
             }
         ]
