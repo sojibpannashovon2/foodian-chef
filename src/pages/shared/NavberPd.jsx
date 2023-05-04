@@ -2,7 +2,7 @@
 
 import { Button, Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { FaPersonBooth } from "react-icons/fa";
+// import { FaPersonBooth } from "react-icons/fa";
 import { useContext } from "react";
 import { authContext } from "../../provider/AuthProvider";
 

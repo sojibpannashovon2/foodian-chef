@@ -22,6 +22,7 @@ const Header = () => {
                 console.log(error);
             })
     }
+
     return (
         <>
             <Navbar className="container bg-secondary p-2 border border-success shadow-lg fw-bold " collapseOnSelect expand="lg" bg="light" variant="light">
@@ -29,9 +30,10 @@ const Header = () => {
                     <Navbar.Brand className="fw-bold" href="#home">Foodian Chef-And-Food</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
-                        <Nav className="mx-auto text-white">
-                            <Nav.Link href="#features">
+                        <Nav className="mx-auto ">
+                            <Nav.Link href="#features" >
                                 <Link to="/recipes">Home</Link>
+
                             </Nav.Link>
                             <Nav.Link href="#pricing">
                                 <Link to="/blog">Blog</Link>
