@@ -2,7 +2,7 @@
 
 import { Button, Card, Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
-// import { FaPersonBooth } from "react-icons/fa";
+
 
 import banner from '../../assets/banner.jpg'
 import { useContext } from "react";

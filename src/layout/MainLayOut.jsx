@@ -4,6 +4,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import { Outlet } from "react-router-dom";
 import Header from "../pages/shared/Header";
 import RightSide from "../pages/shared/RightSide";
+import Footer from "../pages/shared/Footer";
 
 const MainLayOut = () => {
     return (
@@ -23,6 +24,7 @@ const MainLayOut = () => {
                         <RightSide></RightSide>
                     </Col>
                 </Row>
+                <Footer></Footer>
             </Container>
         </div>
     );

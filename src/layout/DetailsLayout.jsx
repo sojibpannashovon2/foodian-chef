@@ -4,6 +4,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 import { Outlet } from 'react-router-dom';
 import NavberPd from '../pages/shared/NavberPd';
 import RightSide from '../pages/shared/RightSide';
+import Footer from '../pages/shared/Footer';
 
 const DetailsLayout = () => {
     return (
@@ -12,7 +13,7 @@ const DetailsLayout = () => {
 
             <Container className='my-5'>
 
-                <Row>
+                <Row className='mb-5'>
 
                     <Col lg={9} >
                         <Outlet></Outlet>
@@ -21,6 +22,7 @@ const DetailsLayout = () => {
                         <RightSide></RightSide>
                     </Col>
                 </Row>
+                <Footer></Footer>
             </Container>
         </div>
     );

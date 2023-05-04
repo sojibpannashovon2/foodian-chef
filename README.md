@@ -10,5 +10,5 @@
 "#  2. Secondly create an client site vite react named Foodian chef and food"
 "#  3. Thirdly I desgin may website layout using react bootstrap "
 "#  4. Fourthly set authentification to the website using firebase "
-"#  4. Finaly i diploy the client site on firebase hosting and deploy the server at vercel"
+"#  5. Finaly i diploy the client site on firebase hosting and deploy the server at vercel"
 

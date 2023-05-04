@@ -46,6 +46,7 @@ const AuthProvider = ({ children }) => {
     }, [])
 
     const updateUserProfile = (user, name, photo) => {
+        setLoader(true)
         return updateProfile(user, {
             displayName: name,
             photoURL: photo
