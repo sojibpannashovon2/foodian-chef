@@ -24,7 +24,8 @@ const NavberPd = () => {
                     <Nav>
                         <Nav.Link href="#deets"><FaPersonBooth></FaPersonBooth></Nav.Link>
                         <Nav.Link href="#memes">
-                            Log-In
+
+                            <Link to="/login">Log-In</Link>
                         </Nav.Link>
                     </Nav>
                 </Navbar.Collapse>

@@ -10,6 +10,8 @@ const RecipeDetails = () => {
     const { name, photo, years_of_experience, likes, recipes_number, description, recipesItem } = recipe
     return (
         <div>
+
+
             <Card border="danger shadow-lg bg-light">
                 <Card.Header className="d-flex justify-content-center align-items-center gap-5">
                     <div className="">  <Card.Img className="img-fluid  p-4 " style={{ height: "300px", padding: "10px", borderRadius: "50px", width: "300px" }} variant="top" src={photo} /></div>

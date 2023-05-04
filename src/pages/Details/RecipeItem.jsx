@@ -1,5 +1,6 @@
 // import React from 'react';
 
+import { useState } from "react";
 import { Button, Card } from "react-bootstrap";
 
 import {
@@ -15,8 +16,17 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 const RecipeItem = ({ pd }) => {
-    console.log(pd);
+    // console.log(pd);
+
     const notify = () => toast("The Recipe Is Favaourtie For Me !!!");
+
+    const [disabled, setDisabled] = useState(false);
+
+    const handleClick = () => {
+        setDisabled(true);
+        // perform your button click logic here
+    };
+
     const { recipe_name, ingredients, cooking_method, rating } = pd
     return (
         <Card className=" mt-4">
@@ -35,7 +45,7 @@ const RecipeItem = ({ pd }) => {
 
             </Card.Body>
             <Card.Footer className="d-flex justify-content-between">
-                <Button onClick={notify} className="ms-4" variant="primary">Favorite Item</Button>
+                <Button onClick={handleClick} disabled={disabled} className="ms-4" variant="primary"><span onClick={notify}>Favorite Item</span></Button>
                 <div className="me-4 d-flex gap-3 justify-content-center align-items-center">
                     <FaStar></FaStar>
                     <FaStar></FaStar>

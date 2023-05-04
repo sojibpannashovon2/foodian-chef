@@ -1,9 +1,13 @@
 // import React from 'react';
 
+import { Outlet } from "react-router-dom";
+import NavberPd from "../pages/shared/NavberPd";
+
 const LogInLayOut = () => {
     return (
         <div>
-            <h1>Log-in-layout</h1>
+            <NavberPd></NavberPd>
+            <Outlet></Outlet>
         </div>
     );
 };

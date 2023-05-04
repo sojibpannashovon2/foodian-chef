@@ -5,18 +5,8 @@ import { Link } from "react-router-dom";
 
 const CardDetails = ({ recipe }) => {
     const { id, name, photo, years_of_experience, likes, recipes_number, description } = recipe
-    console.log(recipe);
-    //     Chef Picture
+    // console.log(recipe);
 
-    // Chef Name
-
-    // Years of experience
-
-    // Numbers of recipes
-
-    // Likes
-
-    // View Recipes Button
     return (
 
         <Card border="success" className="mb-3 shadow-lg">
