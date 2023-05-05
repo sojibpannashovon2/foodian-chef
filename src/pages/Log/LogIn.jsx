@@ -26,6 +26,11 @@ const LogIn = () => {
         const password = form.password.value;
         console.log(email, password);
         form.reset();
+        if (password.length < 6) {
+            setError("Your Password must be 6 character !!")
+            alert("Your Password must be 6 character !!")
+            return;
+        }
         signIn(email, password)
             .then(result => {
                 const loggedUser = result.user;
@@ -47,6 +52,7 @@ const LogIn = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
+                navigate(from, { replace: true })
             })
             .catch(error => {
                 console.log(error);
@@ -57,6 +63,7 @@ const LogIn = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
+                navigate(from, { replace: true })
             })
             .catch(error => {
                 console.log(error);

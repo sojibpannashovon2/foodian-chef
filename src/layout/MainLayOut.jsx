@@ -7,7 +7,10 @@ import RightSide from "../pages/shared/RightSide";
 import Footer from "../pages/shared/Footer";
 import LeftSide from "../pages/shared/styles/LeftSide";
 
+
 const MainLayOut = () => {
+
+
     return (
         <div>
             <Header></Header>
@@ -19,6 +22,7 @@ const MainLayOut = () => {
                         <LeftSide></LeftSide>
                     </Col>
                     <Col lg={6} >
+
                         <Outlet></Outlet>
                     </Col>
                     <Col lg={3} >

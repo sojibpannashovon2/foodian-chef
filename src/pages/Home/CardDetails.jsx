@@ -10,16 +10,17 @@ const CardDetails = ({ recipe }) => {
 
     return (
 
-        <Card border="success" className="mb-3 shadow-lg">
+
+        <Card border="success" className="mb-3 shadow-lg ">
             {/* 
             <Card.Header>Header</Card.Header> */}
             <LazyLoad offset={400} onContentVisible={() => { console.log('loaded!') }} threshold={0.95}>
-                <Card.Img className="img-fluid  p-4 " style={{ height: "400px", padding: "10px", borderRadius: "50px" }} variant="top" src={photo} />
+                <Card.Img className="img-fluid  p-4 " style={{ height: "500px", padding: "10px", borderRadius: "50px" }} variant="top" src={photo} />
             </LazyLoad>
 
             <Card.Body>
                 <Card.Title className="fw-bold">{name}</Card.Title>
-                <Card.Text>
+                <Card.Text className="w-50">
                     {
                         description.slice(0, 100)
                     }
@@ -27,14 +28,17 @@ const CardDetails = ({ recipe }) => {
                 <Button variant="outline-success" className=" w-50 fw-bold text-white"><Link className="text-black" to={`/recipes/${id}`}>View-Recipr-Details</Link></Button>
             </Card.Body>
             <Card.Footer>
-                <div className="fw-semibold d-flex gap-3 ">
+                <div className="fw-semibold d-flex gap-2 ">
 
-                    <span className="border border-success p-2 rounded-lg">Year Of Experience: {years_of_experience}</span>
-                    <span className="border border-success p-2 rounded-lg">Likes: {likes}</span>
-                    <span className="border border-success p-2 rounded-lg">Numbers of recipes: {recipes_number}</span>
+                    <span className="border border-success rounded-3 p-2 ">Experience: {years_of_experience}</span>
+                    <span className="border border-success rounded-3 p-2 ">Likes: {likes}</span>
+                    <span className="border border-success rounded-3 p-2 ">Recipes: {recipes_number}</span>
                 </div>
             </Card.Footer>
         </Card>
+
+
+
 
     );
 };

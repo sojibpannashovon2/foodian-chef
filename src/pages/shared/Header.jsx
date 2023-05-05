@@ -1,10 +1,12 @@
 // import React from 'react';
 
-import { Button, Card, Container, Nav, Navbar } from "react-bootstrap";
+import { Button, Carousel, Container, Nav, Navbar } from "react-bootstrap";
 import { Link, NavLink } from "react-router-dom";
 
 
-import banner from '../../assets/banner.jpg'
+import banner from '../../assets/banner.png'
+import banner2 from '../../assets/Brown Minimalist Pizza Grand Opening Banner Landscape.png'
+import banner3 from '../../assets/Blue Pink Gradient Fashion Banner.png'
 import { useContext } from "react";
 import { authContext } from "../../provider/AuthProvider";
 
@@ -28,7 +30,7 @@ const Header = () => {
 
     return (
         <>
-            <Navbar className="container bg-secondary p-2 border border-success shadow-lg fw-bold " collapseOnSelect expand="lg" bg="light" variant="light">
+            <Navbar className="container bg-info p-2  border border-dark shadow-lg fw-bold rounded-3" collapseOnSelect expand="lg" bg="light" variant="light">
                 <Container>
                     <Navbar.Brand className="fw-bold" href="#home">Foodian Chef-And-Food</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -64,7 +66,7 @@ const Header = () => {
 
                                         <Link to="/login">
 
-                                            <Button variant="secondary">Log-In</Button>
+                                            <Button variant="success">Log-In</Button>
                                         </Link>
                                 }
 
@@ -75,18 +77,38 @@ const Header = () => {
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
-            <div className="conatainer">
-                <Card className=" text-white container p-4 shadow-lg my-4 border border-success ">
-                    <Card.Img className="img-fluid img-thumbnail  mx-auto" src={banner} alt="Card image" />
-                    <Card.ImgOverlay className=" d-flex flex-column justify-content-center align-items-center  ">
-                        <Card.Title className="text-center fw-bold display-6">Foodian Chef And Food</Card.Title>
-                        <Card.Text className="text-justify px-5 mx-5">
-                            Foodian Chef And Food website is an online platform that features culinary expertise and resources for aspiring chefs, food enthusiasts, and industry professionals. From recipes and cooking techniques to restaurant reviews and food trends, a chef website provides a wealth of information for those interested in the art of cooking and dining. It may also offer services such as online classes, recipe books, and cooking tools for purchase.
-                        </Card.Text>
 
-                    </Card.ImgOverlay>
-                </Card>
-            </div>
+            <div > <Carousel className="container mt-3" variant="dark">
+                <Carousel.Item>
+                    <img
+                        className="img-thumbnail d-block w-100 border border-success rounded-5"
+                        src={banner2}
+                        alt="First slide"
+                    />
+
+                </Carousel.Item>
+                <Carousel.Item >
+                    {/* <Carousel.Caption className=" mb-5 pb-5">
+                        <h5>Second slide label</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </Carousel.Caption> */}
+                    <img
+                        className="img-thumbnail d-block w-100 border border-success rounded-5"
+                        src={banner3}
+                        alt="Second slide"
+                    />
+
+                </Carousel.Item>
+                <Carousel.Item>
+                    <img
+                        className="img-thumbnail d-block w-100 border border-success rounded-5"
+                        src={banner}
+                        alt="Third slide"
+                    />
+
+                </Carousel.Item>
+            </Carousel></div>
+
         </>
     );
 };

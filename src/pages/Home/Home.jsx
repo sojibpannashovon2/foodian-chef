@@ -8,7 +8,7 @@ const Home = () => {
     const recipes = useLoaderData();
     // console.log(recipes);
     return (
-        <div>
+        <div >
             {
                 recipes.map(recipe => <CardDetails key={recipe.id}
                     recipe={recipe}
