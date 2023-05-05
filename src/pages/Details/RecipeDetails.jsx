@@ -2,13 +2,16 @@
 
 import { Card } from "react-bootstrap";
 import { useLoaderData } from "react-router-dom";
-import RecipeItem from "./RecipeItem";
+// import RecipeItem from "./RecipeItem";
 import LazyLoad from "react-lazy-load";
+import RecipeItem from "./RecipeItem";
 
 const RecipeDetails = () => {
     const recipe = useLoaderData();
+    // console.log(recipe);
     console.log(recipe);
     const { name, photo, years_of_experience, likes, recipes_number, description, recipesItem } = recipe
+    console.log(recipe.recipesItem);
     return (
         <div>
 
@@ -38,7 +41,7 @@ const RecipeDetails = () => {
             </Card>
             <div className="mt-4">
                 {
-                    recipesItem.map(pd => <RecipeItem pd={pd} ></RecipeItem>)
+                    recipesItem?.map(pd => <RecipeItem pd={pd} ></RecipeItem>)
                 }
             </div>
 

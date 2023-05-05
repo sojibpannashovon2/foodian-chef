@@ -3,13 +3,24 @@
 import { Button, Container, Nav, Navbar } from "react-bootstrap";
 import { Link, NavLink } from "react-router-dom";
 // import { FaPersonBooth } from "react-icons/fa";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { authContext } from "../../provider/AuthProvider";
 
 const NavberPd = () => {
 
     const { user, logOut } = useContext(authContext)
     // console.log(name);
+
+    const [showName, setShowName] = useState(false);
+
+    const handleHover = () => {
+        setShowName(true);
+    };
+
+    // const handleLeave = () => {
+    //     setShowName(false);
+    // };
+
 
     const handleLogoutButton = () => {
         logOut()
@@ -27,7 +38,7 @@ const NavberPd = () => {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mx-auto text-white">
-                        <Nav.Link href="#features">
+                        <Nav.Link >
                             <Link to="/">Home</Link>
                         </Nav.Link>
                         {/* <Nav.Link href="#pricing">
@@ -45,7 +56,14 @@ const NavberPd = () => {
                         } */}
                         <div className="">
                             {
-                                user && <p> <img className="rounded-circle" style={{ height: "40px", width: "40px" }} src={user?.photoURL} alt="Not Found" /></p>
+                                user && <p> <img className="rounded-circle" style={{ height: "40px", width: "40px" }} src={user?.photoURL} alt="Not Found"
+                                    onMouseEnter={handleHover}
+                                // // onMouseLeave={handleLeave}
+
+
+                                />
+                                    {showName && <div className="profile-name">{user.displayName}</div>}
+                                </p>
                             }
                         </div>
                         <Nav.Link eventKey={2} href="#memes">

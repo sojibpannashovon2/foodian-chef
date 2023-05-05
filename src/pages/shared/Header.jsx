@@ -7,13 +7,23 @@ import { Link, NavLink } from "react-router-dom";
 import banner from '../../assets/banner.png'
 import banner2 from '../../assets/Brown Minimalist Pizza Grand Opening Banner Landscape.png'
 import banner3 from '../../assets/Blue Pink Gradient Fashion Banner.png'
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { authContext } from "../../provider/AuthProvider";
 
 const Header = () => {
 
     const { user, logOut } = useContext(authContext)
     // console.log(name);
+
+    const [showName, setShowName] = useState(false);
+
+    const handleHover = () => {
+        setShowName(true);
+    };
+
+    // const handleLeave = () => {
+    //     setShowName(false);
+    // };
 
 
     const handleLogoutButton = () => {
@@ -43,7 +53,7 @@ const Header = () => {
                             <NavLink to='/recipe' style={isActive => ({
                                 color: isActive ? "green" : "blue"
                             })}> Home</NavLink>
-                            <Nav.Link href="#pricing">
+                            <Nav.Link >
                                 <Link to="/blog">Blog</Link>
                             </Nav.Link>
 
@@ -56,7 +66,15 @@ const Header = () => {
 
                             <div className="">
                                 {
-                                    user && <p> <img className="rounded-circle" style={{ height: "40px", width: "40px" }} src={user?.photoURL} alt="Not Found" /></p>
+                                    user && <> <img
+
+                                        className="rounded-circle" style={{ height: "40px", width: "40px" }} src={user?.photoURL} alt="Not Found"
+                                        onMouseEnter={handleHover}
+                                    // onMouseLeave={handleLeave}
+
+                                    />
+                                        {showName && <div className="profile-name">{user.displayName}</div>}
+                                    </>
                                 }
                             </div>
 

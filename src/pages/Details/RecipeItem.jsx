@@ -27,7 +27,7 @@ const RecipeItem = ({ pd }) => {
         // perform your button click logic here
     };
 
-    const { recipe_name, ingredients, cooking_method, rating } = pd
+    const { recipe_name, cooking_method, rating, ingredients } = pd
     return (
         <Card className=" mt-4">
             <Card.Header className="fw-bold">{recipe_name}</Card.Header>
@@ -38,7 +38,8 @@ const RecipeItem = ({ pd }) => {
                     <div className="ms-5 p-4">
                         <h3>Ingridients: </h3>
                         {
-                            ingredients.map(pm => <li> {pm}</li>)
+
+                            ingredients.map(pm => <li>{pm}</li>)
                         }
                     </div>
                 </Card.Text>
